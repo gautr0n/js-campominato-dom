@@ -3,6 +3,7 @@
 const rows = 10;
 const cells = 10;
 const totalCells = rows * cells;
+const maxPoints = totalCells - 16;
 let points = '0';
 const bomb = [];
 
@@ -56,6 +57,11 @@ function createCell(){
                 cell.classList.add('clicked');
             } else {
                 points++;
+                if (points==maxPoints){
+                    cell.classList.add('clicked');
+                    console.log('punti tot:' + points, 'hai vinto');
+                    return;
+                }
                 console.log('punti tot:' + points);
                 cell.classList.add('clicked');
             }
@@ -97,7 +103,7 @@ Generiamoli e stampiamo in console per essere certi che siano corretti
 # //// MILESTONE 3
 Quando l'utente clicca su una cella, verifichiamo se ha calpestato una bomba, controllando se il numero di cella è presente nell'array di bombe.
 Se si, la cella diventa rossa (raccogliamo il punteggio e e scriviamo in console che la partita termina) altrimenti diventa azzurra e dobbiamo incrementare il punteggio.
-# MILESTONE 4
+# ////MILESTONE 4
 Quando l'utente clicca su una cella, e questa non è una bomba, dobbiamo controllare se il punteggio incrementato ha raggiunto il punteggio massimo perchè in quel caso la partita termina. Raccogliamo quindi il messaggio è scriviamo un messaggio appropriato.
 (Ma come stabiliamo quale sia il punteggio massimo?)
 # MILESTONE 5
