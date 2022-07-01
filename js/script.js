@@ -3,7 +3,7 @@
 const rows = 10;
 const cells = 10;
 const totalCells = rows * cells;
-const maxPoints = totalCells - 16;
+const maxPoints = totalCells - 98;
 let points = '0';
 const bomb = [];
 
@@ -52,14 +52,13 @@ function createCell(){
                 return;
             } else if (bombCheck(cellNumber)){
                 cell.classList.add('explode');
-                console.log('punti tot:' + points);
-                console.log('hai perso');
                 cell.classList.add('clicked');
+                alert('hai perso hai totalizzato: ' + points);
             } else {
                 points++;
                 if (points==maxPoints){
                     cell.classList.add('clicked');
-                    console.log('punti tot:' + points, 'hai vinto');
+                    alert('hai vinto hai totalizzato il massimo dei punti: ' + points);
                     return;
                 }
                 console.log('punti tot:' + points);
