@@ -80,6 +80,7 @@ header, footer{
 #grid .cell.clicked{
     color: white;
     background-color: dodgerblue;
+    cursor: not-allowed;
 }
 
 #grid .border-color-white{
