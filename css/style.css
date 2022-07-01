@@ -86,3 +86,6 @@ header, footer{
 #grid .border-color-white{
     border-color: white;
 }
+#grid .cell.explode{
+    background-color: red;
+}
