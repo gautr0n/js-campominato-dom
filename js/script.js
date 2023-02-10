@@ -1,5 +1,14 @@
 let gridSize = 10;
 let cellNumber = gridSize * gridSize
+const bomb = [];
+
+while (bomb.length < 16){
+    let check =  Math.floor(Math.random() * 100 + 1);
+    if ( bomb.includes(check) === false ){
+        bomb.push(check)
+    }
+}
+console.log(bomb);
 
 const gridBox = document.querySelector('.grid-box');
 
@@ -20,3 +29,4 @@ for(let i = 0 ; i < numberOnClick.length ; i++){
 function hello(){
     console.log(this.innerHTML);
 };
+
