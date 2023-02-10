@@ -20,8 +20,11 @@ for(let i = 0 ; i < cellNumber ; i++) {
     gridBox.innerHTML += divString;
 }
 
-const numberOnClick = document.querySelectorAll('.grid-box > .cell')
+const numberOnClick = document.querySelectorAll('.grid-box > .cell');
 const finalResult = document.getElementById('result');
+const start = document.querySelector('.btn');
+
+start.addEventListener('click', reStart);
 
 for(let i = 0 ; i < numberOnClick.length ; i++){
     const cell = numberOnClick[i]
@@ -46,6 +49,19 @@ function hello(){
         console.log(points)
         let showPoints = `Punteggio: ${points}`;
         document.getElementById("point-counter").innerHTML = showPoints;
+        this.removeEventListener('click', hello);
     }
 };
 
+function reStart(){
+    for(let i = 0 ; i < numberOnClick.length ; i++){
+        const cell = numberOnClick[i]
+        cell.classList.remove('bg-primary');
+        cell.classList.remove('bg-danger');
+        points = 0;
+        finalResult.classList.add('d-none');
+        let showPoints = `Punteggio: ${points}`;
+        document.getElementById("point-counter").innerHTML = showPoints;
+        cell.addEventListener('click', hello);
+    };
+}
