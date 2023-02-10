@@ -1,0 +1,38 @@
+/*generics*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/*utilities*/
+:root{
+    --gray: #737373;
+}
+
+.margin-bt{
+    margin-bottom: 20px;
+}
+
+/*main*/
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.grid-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-box > .cell {
+    aspect-ratio: 1;
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
