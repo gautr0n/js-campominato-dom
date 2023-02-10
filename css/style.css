@@ -17,6 +17,22 @@
 
 /*main*/
 
+#point-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px;
+}
+
+#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;

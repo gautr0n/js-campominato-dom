@@ -21,6 +21,7 @@ for(let i = 0 ; i < cellNumber ; i++) {
 }
 
 const numberOnClick = document.querySelectorAll('.grid-box > .cell')
+const finalResult = document.getElementById('result');
 
 for(let i = 0 ; i < numberOnClick.length ; i++){
     const cell = numberOnClick[i]
@@ -35,9 +36,16 @@ function hello(){
             const cell = numberOnClick[i]
             cell.removeEventListener('click', hello);
         };
+        finalResult.classList.remove('d-none');
+        let showPoints = `Punteggio finale: ${points}`;
+        finalResult.innerHTML = showPoints;
+        console.log(points);
     } else {
         this.classList.toggle('bg-primary');
         points++;
+        console.log(points)
+        let showPoints = `Punteggio: ${points}`;
+        document.getElementById("point-counter").innerHTML = showPoints;
     }
 };
 
