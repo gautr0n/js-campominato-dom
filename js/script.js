@@ -27,6 +27,11 @@ for(let i = 0 ; i < numberOnClick.length ; i++){
 };
 
 function hello(){
-    console.log(this.innerHTML);
+    let num = parseInt(this.innerHTML);
+    if (bomb.includes(num)){
+        this.classList.toggle('bg-danger')
+    } else {
+        this.classList.toggle('bg-primary')
+    }
 };
 
