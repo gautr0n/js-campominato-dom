@@ -1,6 +1,7 @@
 let gridSize = 10;
 let cellNumber = gridSize * gridSize
 const bomb = [];
+let points = 0
 
 while (bomb.length < 16){
     let check =  Math.floor(Math.random() * 100 + 1);
@@ -29,9 +30,14 @@ for(let i = 0 ; i < numberOnClick.length ; i++){
 function hello(){
     let num = parseInt(this.innerHTML);
     if (bomb.includes(num)){
-        this.classList.toggle('bg-danger')
+        this.classList.toggle('bg-danger');
+        for(let i = 0 ; i < numberOnClick.length ; i++){
+            const cell = numberOnClick[i]
+            cell.removeEventListener('click', hello);
+        };
     } else {
-        this.classList.toggle('bg-primary')
+        this.classList.toggle('bg-primary');
+        points++;
     }
 };
 
